@@ -244,13 +244,49 @@ app files
 ![Alt text](image-16.png)
 
 ## 8.Docker Images and Containers
-```bash
 
+![Alt text](image-17.png)
+
+from one docker image we can create multiple containers.
+
+```bash
+docker container run -d -p 8080:80 amigoscode/2048
+```
+`amigoscode/2048` this is the image name
+
+`-d` run in detached mode
+
+`-p` map port 8080 on the host to port 80 on the container
+
+`8080:80` this is the port mapping
+
+
+```bash
+➜  ~ docker container run -d -p 8080:80 nginx
+Unable to find image 'nginx:latest' locally
+latest: Pulling from library/nginx
+9a59d19f9c5b: Download complete
+9ea27b074f71: Download complete
+c6edf33e2524: Download complete
+84b1ff10387b: Download complete
+9b16c94bb686: Download complete
+517357831967: Download complete
+Digest: sha256:10d1f5b58f74683ad34eb29287e07dab1e90f10af243f151bb50aa5dbb4d62ee
+Status: Downloaded newer image for nginx:latest
+4cead163c96459f132b0a735781b4df5fd445568c69052aa6171ab37c1316273
+➜  ~ docker container ls
+CONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS          PORTS                  NAMES
+4cead163c964   nginx     "/docker-entrypoint.…"   13 seconds ago   Up 11 seconds   0.0.0.0:8080->80/tcp   objective_mirzakhani
 ```
 
-```bash
+http://localhost:8080/
 
-```
+![Alt text](image-18.png)
+
+https://hub.docker.com/
+
+![Alt text](image-19.png)
+
 ## 9.Managing Containers
 ```bash
 
