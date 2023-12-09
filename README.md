@@ -101,6 +101,52 @@ we need to install git bash and visual studio code
 
 ## 6.Getting started with Docker
 
+```bash
+docker -v
+
+```
+
+![Alt text](image-6.png)
+
+to see all the available commands
+
+![Alt text](image-7.png)
+
+![Alt text](image-9.png)
+
+![Alt text](image-8.png)
+
+http://localhost/tutorial/
+
+![Alt text](image-10.png)
+
+```bash
+# This code is used to stop and remove a docker container. The docker container is identified by its container ID, which is passed in through the args array. The container is stopped first, then removed.
+
+➜  ~ docker container stop 8aeae32b0e0a
+8aeae32b0e0a
+➜  ~ docker rm 8aeae32b0e0a
+8aeae32b0e0a
+
+```
+
+```bash
+# Pull the latest image from Docker Hub
+sudo docker pull amigoscode/2048
+
+# Run the image on port 80
+# -d means run in detached mode
+# -p means map port 80 on the host to port 80 on the container
+sudo docker run -d -p 80:80 amigoscode/2048
+```
+http://localhost:80
+
+![Alt text](image-11.png)
+
+
+now we can see the running containers
+
+![Alt text](image-12.png)
 
 
 ## 7.Undestanding Containers
