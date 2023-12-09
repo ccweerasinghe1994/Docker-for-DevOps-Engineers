@@ -88,6 +88,9 @@ Docker is a tool designed to make it easier to create, deploy, and run applicati
 
 
 ## 3.Installing Docker
+
+docker desktop for windows link : https://docs.docker.com/docker-for-windows/install/
+
 ## 4.Exploring Docker Dashboard
 ## 5.Tools
 ## 6.Getting started with Docker
