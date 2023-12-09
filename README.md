@@ -150,65 +150,563 @@ now we can see the running containers
 
 
 ## 7.Undestanding Containers
-## 8.Docker Images and Containers
-## 9.Managing Containers
-## 10.Docker ps format
-## 11.Exposing Ports
-## 12.Exposing Multiple Ports
-## 13.Naming Containers
-## 14.Running Container in the background
-## 15.Docker Images
-## 16.Managing Docker Images
-## 17.Docker Pull
-## 18.Inspecting Images
-## 19.Docker Architecture
-## 20.Docker Daemon
-## 21.Volumes
-## 22.Bind Mount Volumes
-## 23.Bind Mount Volumes in Action
-## 24.Using Vomules for Local Dev
-## 25.Docker Volumes
-## 26.TMPFS Mount
-## 27.Dockerfile
-## 28.Creating Dockerfile
-## 29.Building DockerImages
-## 30.Running a container from Custom Image
-## 31.Investigate Container file system
-## 32.Buliding ExpressJS API
-## 33.Dockerfile and Building image for user-api
-## 34.Running Container for user-api image
-## 35.Exploring Dockerfiles
-## 36.Dockerfile reference
-## 37.Pulling Images using a Specifc Tag
-## 38.Creating tags
-## 39.Creating Version 2 of the Dashboard
-## 40.Never Run Latest In Production
-## 41.Image Variants
-## 42.Docker Registries
-## 43.Docker Login
-## 44.Docker push
-## 45.Docker Inpect
-## 46.Logs
-## 47.Running commands in Containers
-## 48.How to comunicate between containers
-## 49.Docker Network
-## 50.MongoDB Container
-## 51.MongoExpress
-## 52.Understanding Container Communication
-## 53.Another example
-## 54.What is Docker Compose
-## 55.Docker Compose cmd
-## 56.Services
-## 57.Docker Network
-## 58.Docker Compose Up
-## 59.Exploring docker compose commands
-## 60.Docker Volume
-## 61.Docker Compose Documentation
-## 62.Docker scan
-## 63.Trivy
-## 64.Distroless Images
-## 65.Security Best Practices
 
+![Alt text](image-13.png)
+
+![Alt text](image-14.png)
+
+```bash
+➜  ~ docker container ls --help
+
+Usage:  docker container ls [OPTIONS]
+
+List containers
+
+Aliases:
+  docker container ls, docker container list, docker container ps, docker ps
+
+Options:
+  -a, --all             Show all containers (default shows just running)
+  -f, --filter filter   Filter output based on conditions provided
+      --format string   Format output using a custom template:
+                        'table':            Print output in table format with column headers (default)
+                        'table TEMPLATE':   Print output in table format using the given Go template
+                        'json':             Print in JSON format
+                        'TEMPLATE':         Print output using the given Go template.
+                        Refer to https://docs.docker.com/go/formatting/ for more information about formatting output with templates
+  -n, --last int        Show n last created containers (includes all states) (default -1)
+  -l, --latest          Show the latest created container (includes all states)
+      --no-trunc        Don't truncate output
+  -q, --quiet           Only display container IDs
+  -s, --size            Display total file sizes
+```
+
+![Alt text](image-15.png)
+
+```bash
+➜  ~ docker container ls
+CONTAINER ID   IMAGE             COMMAND                  CREATED             STATUS          PORTS                NAMES
+f4783336d1d3   amigoscode/2048   "/docker-entrypoint.…"   About an hour ago   Up 25 seconds   0.0.0.0:80->80/tcp   zealous_vaughan
+```
+```bash
+➜  ~ docker exec --help
+
+Usage:  docker exec [OPTIONS] CONTAINER COMMAND [ARG...]
+
+Execute a command in a running container
+
+Aliases:
+  docker container exec, docker exec
+
+Options:
+  -d, --detach               Detached mode: run command in the background
+      --detach-keys string   Override the key sequence for detaching a container
+  -e, --env list             Set environment variables
+      --env-file list        Read in a file of environment variables
+  -i, --interactive          Keep STDIN open even if not attached
+      --privileged           Give extended privileges to the command
+  -t, --tty                  Allocate a pseudo-TTY
+  -u, --user string          Username or UID (format: "<name|uid>[:<group|gid>]")
+  -w, --workdir string       Working directory inside the container
+➜  ~
+``` 
+
+```bash
+docker exec -i -t f4783336d1d3 sh
+# ls
+bin  boot  dev  docker-entrypoint.d  docker-entrypoint.sh  etc  home  lib  lib64  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+#
+```
+as you can see we are inside the container
+
+and this is a linux file structure.
+
+so if we go to the binary folder we can see all the binaries that are installed in the container
+
+```bash
+# cd bin
+# ls
+bash   cp    dir            egrep    gunzip    login  mktemp      nisdomainname  rm         sleep  tempfile  uncompress    zcat    zforce
+cat    dash  dmesg          false    gzexe     ls     more        pidof          rmdir      stty   touch     vdir          zcmp    zgrep
+chgrp  date  dnsdomainname  fgrep    gzip      lsblk  mount       pwd            run-parts  su     true      wdctl         zdiff   zless
+chmod  dd    domainname     findmnt  hostname  mkdir  mountpoint  rbash          sed        sync   umount    which         zegrep  zmore
+chown  df    echo           grep     ln        mknod  mv          readlink       sh         tar    uname     ypdomainname  zfgrep  znew
+#
+```
+app files
+```bash
+# cd /usr/share/nginx/html
+# ls
+50x.html  CONTRIBUTING.md  Dockerfile  LICENSE.txt  README.md  Rakefile  favicon.ico  index.html  js  meta  style
+#
+```
+
+![Alt text](image-16.png)
+
+## 8.Docker Images and Containers
+```bash
+
+```
+
+```bash
+
+```
+## 9.Managing Containers
+```bash
+
+```
+
+```bash
+
+```
+## 10.Docker ps format
+```bash
+
+```
+
+```bash
+
+```
+## 11.Exposing Ports
+```bash
+
+```
+
+```bash
+
+```
+## 12.Exposing Multiple Ports
+```bash
+
+```
+
+```bash
+
+```
+## 13.Naming Containers
+```bash
+
+```
+
+```bash
+
+```
+## 14.Running Container in the background
+```bash
+
+```
+
+```bash
+
+```
+## 15.Docker Images
+```bash
+
+```
+
+```bash
+
+```
+## 16.Managing Docker Images
+```bash
+
+```
+
+```bash
+
+```
+## 17.Docker Pull
+```bash
+
+```
+
+```bash
+
+```
+## 18.Inspecting Images
+```bash
+
+```
+
+```bash
+
+```
+## 19.Docker Architecture
+```bash
+
+```
+
+```bash
+
+```
+## 20.Docker Daemon
+```bash
+
+```
+
+```bash
+
+```
+## 21.Volumes
+```bash
+
+```
+
+```bash
+
+```
+## 22.Bind Mount Volumes
+```bash
+
+```
+
+```bash
+
+```
+## 23.Bind Mount Volumes in Action
+```bash
+
+```
+
+```bash
+
+```
+## 24.Using Vomules for Local Dev
+```bash
+
+```
+
+```bash
+
+```
+## 25.Docker Volumes
+```bash
+
+```
+
+```bash
+
+```
+## 26.TMPFS Mount
+```bash
+
+```
+
+```bash
+
+```
+## 27.Dockerfile
+```bash
+
+```
+
+```bash
+
+```
+## 28.Creating Dockerfile
+```bash
+
+```
+
+```bash
+
+```
+## 29.Building DockerImages
+```bash
+
+```
+
+```bash
+
+```
+## 30.Running a container from Custom Image
+```bash
+
+```
+
+```bash
+
+```
+## 31.Investigate Container file system
+```bash
+
+```
+
+```bash
+
+```
+## 32.Buliding ExpressJS API
+```bash
+
+```
+
+```bash
+
+```
+## 33.Dockerfile and Building image for user-api
+```bash
+
+```
+
+```bash
+
+```
+## 34.Running Container for user-api image
+```bash
+
+```
+
+```bash
+
+```
+## 35.Exploring Dockerfiles
+```bash
+
+```
+
+```bash
+
+```
+## 36.Dockerfile reference
+```bash
+
+```
+
+```bash
+
+```
+## 37.Pulling Images using a Specifc Tag
+```bash
+
+```
+
+```bash
+
+```
+## 38.Creating tags
+```bash
+
+```
+
+```bash
+
+```
+## 39.Creating Version 2 of the Dashboard
+```bash
+
+```
+
+```bash
+
+```
+## 40.Never Run Latest In Production
+```bash
+
+```
+
+```bash
+
+```
+## 41.Image Variants
+```bash
+
+```
+
+```bash
+
+```
+## 42.Docker Registries
+```bash
+
+```
+
+```bash
+
+```
+## 43.Docker Login
+```bash
+
+```
+
+```bash
+
+```
+## 44.Docker push
+```bash
+
+```
+
+```bash
+
+```
+## 45.Docker Inpect
+```bash
+
+```
+
+```bash
+
+```
+## 46.Logs
+```bash
+
+```
+
+```bash
+
+```
+## 47.Running commands in Containers
+```bash
+
+```
+
+```bash
+
+```
+## 48.How to comunicate between containers
+```bash
+
+```
+
+```bash
+
+```
+## 49.Docker Network
+```bash
+
+```
+
+```bash
+
+```
+## 50.MongoDB Container
+```bash
+
+```
+
+```bash
+
+```
+## 51.MongoExpress
+```bash
+
+```
+
+```bash
+
+```
+## 52.Understanding Container Communication
+```bash
+
+```
+
+```bash
+
+```
+## 53.Another example
+```bash
+
+```
+
+```bash
+
+```
+## 54.What is Docker Compose
+```bash
+
+```
+
+```bash
+
+```
+## 55.Docker Compose cmd
+```bash
+
+```
+
+```bash
+
+```
+## 56.Services
+```bash
+
+```
+
+```bash
+
+```
+## 57.Docker Network
+```bash
+
+```
+
+```bash
+
+```
+## 58.Docker Compose Up
+```bash
+
+```
+
+```bash
+
+```
+## 59.Exploring docker compose commands
+```bash
+
+```
+
+```bash
+
+```
+## 60.Docker Volume
+```bash
+
+```
+
+```bash
+
+```
+## 61.Docker Compose Documentation
+```bash
+
+```
+
+```bash
+
+```
+## 62.Docker scan
+```bash
+
+```
+
+```bash
+
+```
+## 63.Trivy
+```bash
+
+```
+
+```bash
+
+```
+## 64.Distroless Images
+```bash
+
+```
+
+```bash
+
+```
+## 65.Security Best Practices
+```bash
+
+```
+
+```bash
+
+```
 
 
 
