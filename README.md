@@ -73,9 +73,20 @@
 
 what is docker ?
 
-
+Docker is a tool designed to make it easier to create, deploy, and run applications by using containers. Containers allow a developer to package up an application with all of the parts it needs, such as libraries and other dependencies, and deploy it as one package.
 
 ## 2.Docker vs VM
+
+![Alt text](image-1.png)
+
+![Alt text](image-2.png)
+
+![Alt text](image-3.png)
+
+![Alt text](image-4.png)
+
+
+
 ## 3.Installing Docker
 ## 4.Exploring Docker Dashboard
 ## 5.Tools
