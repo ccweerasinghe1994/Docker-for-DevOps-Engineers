@@ -69,6 +69,11 @@
 
 
 ## 1.What is Docker
+![Alt text](image.png)
+
+what is docker ?
+
+
 
 ## 2.Docker vs VM
 ## 3.Installing Docker
@@ -134,3 +139,4 @@
 ## 63.Trivy
 ## 64.Distroless Images
 ## 65.Security Best Practices
+
