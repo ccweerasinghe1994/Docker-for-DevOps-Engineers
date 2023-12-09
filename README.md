@@ -96,7 +96,13 @@ docker desktop for windows link : https://docs.docker.com/docker-for-windows/ins
 ![Alt text](image-5.png)
 
 ## 5.Tools
+
+we need to install git bash and visual studio code
+
 ## 6.Getting started with Docker
+
+
+
 ## 7.Undestanding Containers
 ## 8.Docker Images and Containers
 ## 9.Managing Containers
