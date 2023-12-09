@@ -289,12 +289,35 @@ https://hub.docker.com/
 
 ## 9.Managing Containers
 ```bash
+# to see all the containers
+docker container ls -a
 
+CONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS                      PORTS     NAMES
+4cead163c964   nginx     "/docker-entrypoint.…"   24 minutes ago   Exited (0) 10 minutes ago             objective_mirzakhani
+
+# to see all the containers with their ids
+# -q is for quiet mode
+docker container ls -aq
+
+4cead163c964
+
+# to stop a container
+docker container stop 4cead163c964
+
+# to remove a stopped container
+docker container rm 4cead163c964
+
+# to remove a running container
+# -f is for force
+docker container rm -f 4cead163c964
+
+# to remove all the containers
+docker container rm $(docker container ls -aq)
+
+# to start a container
+docker container start 4cead163c964
 ```
 
-```bash
-
-```
 ## 10.Docker ps format
 ```bash
 
