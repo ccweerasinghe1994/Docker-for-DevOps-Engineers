@@ -615,17 +615,30 @@ docker pull nginx
 ![Alt text](image-28.png)
 
 ## 20.Docker Daemon
-```bash
 
+![Alt text](image-29.png)
+
+![Alt text](image-30.png)
+
+![Alt text](image-31.png)
+
+
+```bash
+➜  ~ cd ~/.docker
+➜  .docker ls
+config.json  contexts  desktop  features.json  run  scan
+➜  .docker cat config.json
+{
+  "credsStore": "desktop.exe"
+}
+➜  .docker cat features.json
+cat: features.json: No such file or directory
+➜  .docker cd run
+➜  run ls
+docker-cli-api.sock
 ```
 
-```bash
-
-```
 ## 21.Volumes
-```bash
-
-```
 
 ```bash
 
