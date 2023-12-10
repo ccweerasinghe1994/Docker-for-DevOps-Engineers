@@ -351,13 +351,37 @@ Options:
 ![Alt text](image-22.png)
 
 ## 11.Exposing Ports
-```bash
 
+![Alt text](image-23.png)
+
+
+
+```bash
+➜  ~ docker container ls -a
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+➜  ~ docker container run -d -p 8080:80 nginx
+f9113d5596825550a954814f9a1853b0249fe7bf5ebb8adf34ec7e2e2a340156
+➜  ~ docker container run -d -p 8081:80 nginx
+8b680f1418cf7257e44cf9b29e252801d60c4807b51efecf76ce1403a84d6442
+➜  ~ docker container ls
+CONTAINER ID   IMAGE     COMMAND                  CREATED              STATUS              PORTS                  NAMES
+8b680f1418cf   nginx     "/docker-entrypoint.…"   About a minute ago   Up About a minute   0.0.0.0:8081->80/tcp   crazy_moore
+f9113d559682   nginx     "/docker-entrypoint.…"   About a minute ago   Up About a minute   0.0.0.0:8080->80/tcp   nervous_burnell
+➜  ~ docker container run --help
+
+Usage:  docker container run [OPTIONS] IMAGE [COMMAND] [ARG...]
+
+Create and run a new container from an image
+
+Aliases:
+  docker container run, docker run
+
+Options:
+ -p, --publish list                   Publish a container's port(s) to the host
+  -P, --publish-all                    Publish all exposed ports to random ports
+      --pull string                    Pull image before running ("always", "missing", "never") (default "missing")
 ```
 
-```bash
-
-```
 ## 12.Exposing Multiple Ports
 ```bash
 
