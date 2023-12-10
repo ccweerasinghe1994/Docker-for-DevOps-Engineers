@@ -405,12 +405,18 @@ docker: Error response from daemon: driver failed programming external connectiv
 
 ## 13.Naming Containers
 ```bash
-
+➜  ~ docker container run -d -p 8080:80 --name website nginx
+8cabb0886ff161ee3e341b90ae4e06f1996797f32c4d0c8c8e1ed09edae56693
+➜  ~ docker container run -d -p 8081:80 --name website nginx
+docker: Error response from daemon: Conflict. The container name "/website" is already in use by container "8cabb0886ff161ee3e341b90ae4e06f1996797f32c4d0c8c8e1ed09edae56693". You have to remove (or rename) that container to be able to reuse that name.
+See 'docker run --help'.
+➜  ~ docker container ls
+CONTAINER ID   IMAGE     COMMAND                  CREATED              STATUS              PORTS                  NAMES
+8cabb0886ff1   nginx     "/docker-entrypoint.…"   About a minute ago   Up About a minute   0.0.0.0:8080->80/tcp   website
 ```
 
-```bash
+![Alt text](image-26.png)
 
-```
 ## 14.Running Container in the background
 ```bash
 
