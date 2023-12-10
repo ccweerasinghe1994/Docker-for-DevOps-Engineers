@@ -611,13 +611,9 @@ docker pull nginx
 ```
 
 ## 19.Docker Architecture
-```bash
 
-```
+![Alt text](image-28.png)
 
-```bash
-
-```
 ## 20.Docker Daemon
 ```bash
 
