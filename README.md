@@ -465,21 +465,44 @@ CONTAINER ID   IMAGE     COMMAND                  CREATED              STATUS   
 
 nginx https://hub.docker.com/_/nginx
 
-
-```bash
-
-```
-
-```bash
-
-```
 ## 16.Managing Docker Images
 ```bash
-
+➜  ~ docker image ls
+REPOSITORY               TAG         IMAGE ID       CREATED        SIZE
+nginx                    latest      10d1f5b58f74   13 hours ago   272MB
+amigoscode/2048          latest      9d83e47f0b97   21 hours ago   203MB
+docker/getting-started   latest      d79336f4812b   22 hours ago   73.9MB
+maven                    latest      2bbd188fef23   22 hours ago   769MB
+rust                     1.74.1      32d220ca8c77   22 hours ago   2.05GB
+node                     current     db2672e3c200   22 hours ago   1.58GB
+python                   latest      6d7fa2d5653e   22 hours ago   1.47GB
+openjdk                  22-oracle   6b74a5003ca5   22 hours ago   787MB
+mongo                    7.0.4       b679b96ec8a2   22 hours ago   1.04GB
+postgres                 16.1        d74fa761bad4   22 hours ago   603MB
 ```
 
 ```bash
+➜  ~ docker image
 
+Usage:  docker image COMMAND
+
+Manage images
+
+Commands:
+  build       Build an image from a Dockerfile
+  history     Show the history of an image
+  import      Import the contents from a tarball to create a filesystem image
+  inspect     Display detailed information on one or more images
+  load        Load an image from a tar archive or STDIN
+  ls          List images
+  prune       Remove unused images
+  pull        Download an image from a registry
+  push        Upload an image to a registry
+  rm          Remove one or more images
+  save        Save one or more images to a tar archive (streamed to STDOUT by default)
+  tag         Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE
+
+Run 'docker image COMMAND --help' for more information on a command.
 ```
 ## 17.Docker Pull
 ```bash
