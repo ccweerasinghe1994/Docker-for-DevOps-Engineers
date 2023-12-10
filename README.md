@@ -506,12 +506,10 @@ Run 'docker image COMMAND --help' for more information on a command.
 ```
 ## 17.Docker Pull
 ```bash
-
+# to pull an image
+docker pull nginx
 ```
 
-```bash
-
-```
 ## 18.Inspecting Images
 ```bash
 
