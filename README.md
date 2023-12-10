@@ -460,6 +460,12 @@ CONTAINER ID   IMAGE     COMMAND                  CREATED              STATUS   
 0472c24cdfb910780eaf0fb0339b040fc7954739071cbf7d506fa6c5a9d99db3
 ```
 ## 15.Docker Images
+
+![Alt text](image-27.png)
+
+nginx https://hub.docker.com/_/nginx
+
+
 ```bash
 
 ```
