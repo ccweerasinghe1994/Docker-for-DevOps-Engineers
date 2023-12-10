@@ -384,12 +384,25 @@ Options:
 
 ## 12.Exposing Multiple Ports
 ```bash
-
+➜  ~ docker container run -d -p 8081:80 -p 8080:80 -p 2000:80 nginx
+62d098bc136f07aeb264e39fa91ff4b2c1ba18e302b7abd7819956727685ead9
+➜  ~ docker container ls
+CONTAINER ID   IMAGE     COMMAND                  CREATED         STATUS         PORTS                                                              NAMES
+62d098bc136f   nginx     "/docker-entrypoint.…"   5 seconds ago   Up 5 seconds   0.0.0.0:2000->80/tcp, 0.0.0.0:8080->80/tcp, 0.0.0.0:8081->80/tcp   jolly_panini
 ```
+![Alt text](image-24.png)
+
+if the port is already allocated we will get this error.
 
 ```bash
-
+➜  ~ docker container run -d -p 8081:80 -p 8080:80 -p 2000:80 nginx
+a2847fa225f8da322f5d615d4901f896b1f6e0d6f0dbbefec614c16f967fbf74
+docker: Error response from daemon: driver failed programming external connectivity on endpoint eager_faraday (5874a3000d0436a916b9c53b8f0b4ab7565b1aa257327d51a2bedf7f619b26b0): Bind for 0.0.0.0:2000 failed: port is already allocated.
+➜  ~
 ```
+
+![Alt text](image-25.png)
+
 ## 13.Naming Containers
 ```bash
 
