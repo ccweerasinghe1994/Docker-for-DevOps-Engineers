@@ -792,12 +792,30 @@ COPY . /usr/share/nginx/html
 
 ## 31.Investigate Container file system
 ```bash
+➜  b1ed4d3ce61fdd78e8a3513dbb4a9dcb91a6302a5caea0f3373cf1451dd810ec docker container exec -it flamboyant_noyce sh
+# ls
+bin  boot  dev  docker-entrypoint.d  docker-entrypoint.sh  etc  home  lib  lib32  lib64  libx32  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+# cd us
+sh: 2: cd: can't cd to us
+# cd usr/share/nginx/html && ls
+404.html    LICENSE          blank.html    charts.html           gulpfile.js  js                 package.json   tables.html               utilities-color.html
+50x.html    PRO_UPGRADE.txt  buttons.html  css                   img          login.html         register.html  utilities-animation.html  utilities-other.html
+Dockerfile  README.md        cards.html    forgot-password.html  index.html   package-lock.json  scss           utilities-border.html     vendor
+# ls -a   
+.                .travis.yml  LICENSE          buttons.html  forgot-password.html  js                 register.html             utilities-border.html
+..               404.html     PRO_UPGRADE.txt  cards.html    gulpfile.js           login.html         scss                      utilities-color.html
+.browserslistrc  50x.html     README.md        charts.html   img                   package-lock.json  tables.html               utilities-other.html
+.gitignore       Dockerfile   blank.html       css           index.html            package.json       utilities-animation.html  vendor
+# cat Dockerfile
+FROM nginx
 
+COPY . /usr/share/nginx/html
+
+
+
+# 
 ```
 
-```bash
-
-```
 ## 32.Buliding ExpressJS API
 ```bash
 
