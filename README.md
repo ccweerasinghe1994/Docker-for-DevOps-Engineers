@@ -886,12 +886,33 @@ npm notice
 
 ## 33.Dockerfile and Building image for user-api
 ```bash
-
+➜  user-api docker image build -f ./Dockerfile.test -t user-api-manual .
+[+] Building 6.1s (10/10) FINISHED                                                                                                                               docker:default
+ => [internal] load build definition from Dockerfile.test                                                                                                                  0.0s
+ => => transferring dockerfile: 136B                                                                                                                                       0.0s 
+ => [internal] load metadata for docker.io/library/node:current                                                                                                            2.2s
+ => [auth] library/node:pull token for registry-1.docker.io                                                                                                                0.0s
+ => [internal] load .dockerignore                                                                                                                                          0.0s
+ => => transferring context: 672B                                                                                                                                          0.0s 
+ => [1/4] FROM docker.io/library/node:current@sha256:db2672e3c200b85e0b813cdb294fac16764711d7a66b41315e6261f2231f2331                                                      0.3s 
+ => => resolve docker.io/library/node:current@sha256:db2672e3c200b85e0b813cdb294fac16764711d7a66b41315e6261f2231f2331                                                      0.0s 
+ => [internal] load build context                                                                                                                                          0.1s 
+ => => transferring context: 101B                                                                                                                                          0.0s 
+ => [2/4] WORKDIR /src                                                                                                                                                     0.1s
+ => [3/4] ADD . .                                                                                                                                                          0.1s
+ => [4/4] RUN npm install                                                                                                                                                  2.1s
+ => exporting to image                                                                                                                                                     0.9s
+ => => exporting layers                                                                                                                                                    0.4s 
+ => => exporting manifest sha256:f3af8f0487eff1dd719b18f74dde478d33ccbea7d14b6af414ebdc9e2ccfaddc                                                                          0.0s
+ => => exporting config sha256:e98bcececce977e22a83bb7d7003a739bde8be7c294c489178d11e5caf599d39                                                                            0.0s
+ => => exporting attestation manifest sha256:c6de45cf0855937580025088c01da68adefae0aeb814db701c269ad95b63e116                                                              0.0s
+ => => exporting manifest list sha256:d0c00cb8ef78693f21c2bfecfaac66911dd9819c643b287f7c2cf4ac68fa6c4a                                                                     0.0s 
+ => => naming to docker.io/library/user-api-manual:latest                                                                                                                  0.0s
+ => => unpacking to docker.io/library/user-api-manual:latest
 ```
 
-```bash
+![Alt text](image-46.png)
 
-```
 ## 34.Running Container for user-api image
 ```bash
 
