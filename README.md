@@ -700,12 +700,41 @@ host files
 
 
 ## 25.Docker Volumes
+
+![Alt text](image-39.png)
+
 ```bash
+➜  ~ docker volume --help
 
-```
+Usage:  docker volume COMMAND
 
-```bash
+Manage volumes
 
+Commands:
+  create      Create a volume
+  inspect     Display detailed information on one or more volumes
+  ls          List volumes
+  prune       Remove unused local volumes
+  rm          Remove one or more volumes
+
+Run 'docker volume COMMAND --help' for more information on a command.
+➜  ~ docker volume create vol1
+vol1
+➜  ~ docker volume ls
+DRIVER    VOLUME NAME
+local     vol1
+➜  ~ docker volume inspect vol1
+[
+    {
+        "CreatedAt": "2023-12-11T04:57:15Z",
+        "Driver": "local",
+        "Labels": null,
+        "Mountpoint": "/var/lib/docker/volumes/vol1/_data",
+        "Name": "vol1",
+        "Options": null,
+        "Scope": "local"
+    }
+]
 ```
 ## 26.TMPFS Mount
 ```bash
