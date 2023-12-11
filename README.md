@@ -817,13 +817,73 @@ COPY . /usr/share/nginx/html
 ```
 
 ## 32.Buliding ExpressJS API
-```bash
+
+![Alt text](image-45.png)
+
+```js
+const express = require('express');
+const app = express();
+const port = 3000;
+
+app.get('/', (req, res) => {
+    res.send('Hello, world!');
+});
+
+app.get('/api/v1/users', (req, res) => {
+    // Logic to fetch users from the database or any other data source
+    const users = [
+        { id: 1, name: 'John Doe' },
+        { id: 2, name: 'Jane Smith' },
+        { id: 3, name: 'Bob Johnson' }
+    ];
+    
+    res.json(users);
+});
+
+
+app.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
+});
 
 ```
 
 ```bash
+# initialize node project
 
+➜  user-api docker run -w /src -v $PWD:/src --rm node:current npm init -y
+Wrote to /src/package.json:
+
+{
+  "name": "src",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
+
+# let's install express
+
+➜  user-api docker run -w /src -v $PWD:/src --rm node:current npm i express
+
+added 62 packages, and audited 63 packages in 3s
+
+11 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+npm notice
+npm notice New patch version of npm available! 10.2.4 -> 10.2.5
+npm notice Changelog: <https://github.com/npm/cli/releases/tag/v10.2.5>
+npm notice Run `npm install -g npm@10.2.5` to update!
+npm notice
 ```
+
 ## 33.Dockerfile and Building image for user-api
 ```bash
 
