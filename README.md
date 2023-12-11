@@ -687,13 +687,18 @@ foo
 ```
 
 ## 24.Using Vomules for Local Dev
-```bash
 
+host files
+
+![Alt text](image-36.png)
+
+```bash
+➜  ~ docker container run -p 8080:80 -d -v $PWD:/usr/share/nginx/html --name dashbord nginx
 ```
 
-```bash
+![Alt text](image-37.png)
 
-```
+
 ## 25.Docker Volumes
 ```bash
 
