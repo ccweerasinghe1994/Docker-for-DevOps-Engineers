@@ -754,21 +754,34 @@ FROM nginx
 COPY . /usr/share/nginx/html
 
 ```
-```bash
 
-```
-
-```bash
-
-```
 ## 29.Building DockerImages
 ```bash
-
+➜ docker image build . -t dashbord
+[+] Building 16.6s (8/8) FINISHED                                                                                                                                docker:default
+ => [internal] load build definition from Dockerfile                                                                                                                       0.1s
+ => => transferring dockerfile: 87B                                                                                                                                        0.0s
+ => [internal] load metadata for docker.io/library/nginx:latest                                                                                                            1.9s
+ => [auth] library/nginx:pull token for registry-1.docker.io                                                                                                               0.0s
+ => [internal] load .dockerignore                                                                                                                                          0.1s
+ => => transferring context: 2B                                                                                                                                            0.0s
+ => [internal] load build context                                                                                                                                         12.1s
+ => => transferring context: 18.30MB                                                                                                                                      12.0s
+ => [1/2] FROM docker.io/library/nginx:latest@sha256:10d1f5b58f74683ad34eb29287e07dab1e90f10af243f151bb50aa5dbb4d62ee                                                      0.3s
+ => => resolve docker.io/library/nginx:latest@sha256:10d1f5b58f74683ad34eb29287e07dab1e90f10af243f151bb50aa5dbb4d62ee                                                      0.0s
+ => [2/2] COPY . /usr/share/nginx/html                                                                                                                                     0.5s
+ => exporting to image                                                                                                                                                     1.6s
+ => => exporting layers                                                                                                                                                    1.0s
+ => => exporting manifest sha256:3beed1508e6d20a781ab11da73caf8823a574b3594229718087b9d0817c9c2fb                                                                          0.0s
+ => => exporting config sha256:5e11e96eee6841d8ed9e7d1e2e08e131c63fdd939b3f1af7cdfeaae5d86f79aa                                                                            0.0s
+ => => exporting attestation manifest sha256:e6a51ed6efc75b779864a9158aacdfa1ebb6aa42cd97dd8b38c6b121c77245e2                                                              0.0s
+ => => exporting manifest list sha256:cd810e3693f49e157b13d0065771fdf85d6be1a0043fdc7d3a1339ca2cf7f1eb                                                                     0.0s
+ => => naming to docker.io/library/dashbord:latest                                                                                                                         0.0s
+ => => unpacking to docker.io/library/dashbord:latest
 ```
 
-```bash
+![Alt text](image-43.png)
 
-```
 ## 30.Running a container from Custom Image
 ```bash
 
