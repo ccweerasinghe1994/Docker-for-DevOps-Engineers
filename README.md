@@ -746,14 +746,14 @@ local     vol1
 
 ![Alt text](image-42.png)
 
-```bash
-
-```
-
-```bash
-
-```
 ## 28.Creating Dockerfile
+
+```Dockerfile
+FROM nginx
+
+COPY . /usr/share/nginx/html
+
+```
 ```bash
 
 ```
