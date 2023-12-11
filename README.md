@@ -741,6 +741,11 @@ local     vol1
 ![Alt text](image-40.png)
 
 ## 27.Dockerfile
+
+![Alt text](image-41.png)
+
+![Alt text](image-42.png)
+
 ```bash
 
 ```
