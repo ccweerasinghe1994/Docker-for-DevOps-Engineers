@@ -664,6 +664,9 @@ cat: can't open 'bar.txt': No such file or directory
 ![Alt text](image-34.png)
 
 ## 22.Bind Mount Volumes
+
+![Alt text](image-35.png)
+
 ```bash
 
 ```
