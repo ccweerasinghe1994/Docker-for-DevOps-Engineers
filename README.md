@@ -640,9 +640,29 @@ docker-cli-api.sock
 
 ## 21.Volumes
 
-```bash
+![Alt text](image-32.png)
 
+![Alt text](image-33.png)
+
+
+
+```bash
+➜  ~ docker run bash bash -c "echo foo > bar.txt && cat bar.txt"
+Unable to find image 'bash:latest' locally
+latest: Pulling from library/bash
+5b09e29b769c: Download complete
+661ff4d9561e: Download complete
+a670d36e65dd: Download complete
+Digest: sha256:9e21bb4e3753afe899f2fcff86ffe18e82843d8cbee0647635f3cb01715aca5b
+Status: Downloaded newer image for bash:latest
+foo
+➜  ~ docker run bash bash -c "cat bar.txt"
+cat: can't open 'bar.txt': No such file or directory
+➜  ~
 ```
+
+![Alt text](image-34.png)
+
 ## 22.Bind Mount Volumes
 ```bash
 
