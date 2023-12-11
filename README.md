@@ -784,12 +784,12 @@ COPY . /usr/share/nginx/html
 
 ## 30.Running a container from Custom Image
 ```bash
-
+➜ docker container run -d -p 8080:80 dashbord            
+66c72c261918846439b8dc9f146e484befc18585c94d11bb7133b3cd5f53f626
 ```
+![Alt text](image-44.png)
 
-```bash
 
-```
 ## 31.Investigate Container file system
 ```bash
 
