@@ -737,13 +737,9 @@ local     vol1
 ]
 ```
 ## 26.TMPFS Mount
-```bash
 
-```
+![Alt text](image-40.png)
 
-```bash
-
-```
 ## 27.Dockerfile
 ```bash
 
