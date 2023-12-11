@@ -667,21 +667,25 @@ cat: can't open 'bar.txt': No such file or directory
 
 ![Alt text](image-35.png)
 
-```bash
-
-```
-
-```bash
-
-```
 ## 23.Bind Mount Volumes in Action
-```bash
-
-```
 
 ```bash
-
+➜  ~ mkdir bind-mount
+➜  ~ cd bind-mount
+➜  bind-mount pwd
+/home/chamara/bind-mount
+➜  bind-mount echo $PWD
+/home/chamara/bind-mount
+➜  bind-mount docker run -v $PWD:/tmp bash \
+> bash -c "echo foo > /tmp/bar.txt && cat /tmp/bar.txt"
+foo
+➜  bind-mount ls
+bar.txt
+➜  bind-mount docker run -v $PWD:/tmp bash \
+bash -c "cat /tmp/bar.txt"
+foo
 ```
+
 ## 24.Using Vomules for Local Dev
 ```bash
 
