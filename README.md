@@ -1371,12 +1371,68 @@ root@20e21714eda3:/#
 
 ## 49.Docker Network
 ```bash
+➜  test docker network --help 
 
+Usage:  docker network COMMAND
+
+Manage networks
+
+Commands:
+  connect     Connect a container to a network
+  create      Create a network
+  disconnect  Disconnect a container from a network
+  inspect     Display detailed information on one or more networks
+  ls          List networks
+  prune       Remove all unused networks
+  rm          Remove one or more networks
+
+Run 'docker network COMMAND --help' for more information on a command.
 ```
 
 ```bash
-
+➜  test docker network create mongo
+4097ebd8c91b22ee4eb8449fff8dec572c5695380eab01ed803dbcb434d82119
+➜  test docker network ls 
+NETWORK ID     NAME      DRIVER    SCOPE
+aaaeaa8ba9f6   bridge    bridge    local
+b732a89383fb   host      host      local
+4097ebd8c91b   mongo     bridge    local
+fdf2c02af788   none      null      local
+➜  test docker network inspect mongo 
+[
+    {
+        "Name": "mongo",
+        "Id": "4097ebd8c91b22ee4eb8449fff8dec572c5695380eab01ed803dbcb434d82119",
+        "Created": "2023-12-12T09:47:58.087509386Z",
+        "Scope": "local",
+        "Driver": "bridge",
+        "EnableIPv6": false,
+        "IPAM": {
+            "Driver": "default",
+            "Options": {},
+            "Config": [
+                {
+                    "Subnet": "172.20.0.0/16",
+                    "Gateway": "172.20.0.1"
+                }
+            ]
+        },
+        "Internal": false,
+        "Attachable": false,
+        "Ingress": false,
+        "ConfigFrom": {
+            "Network": ""
+        },
+        "ConfigOnly": false,
+        "Containers": {},
+        "Options": {},
+        "Labels": {}
+    }
+]
 ```
+
+https://docs.docker.com/network/drivers/
+
 ## 50.MongoDB Container
 ```bash
 
