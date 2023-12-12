@@ -1518,13 +1518,48 @@ test>
 ```
 
 ## 53.Another example
+create a network called test and connect two containers to it
 ```bash
-
+➜  test docker network ls 
+NETWORK ID     NAME      DRIVER    SCOPE
+aaaeaa8ba9f6   bridge    bridge    local
+b732a89383fb   host      host      local
+4097ebd8c91b   mongo     bridge    local
+fdf2c02af788   none      null      local
+➜  test docker network create test
+7e3ba519f9e5382bfb8ed007912f6d4560ffbee4b74939da91ecf5bdce8bc821
+➜  test docker network ls
+NETWORK ID     NAME      DRIVER    SCOPE
+aaaeaa8ba9f6   bridge    bridge    local
+b732a89383fb   host      host      local
+4097ebd8c91b   mongo     bridge    local
+fdf2c02af788   none      null      local
+7e3ba519f9e5   test      bridge    local
+➜  test docker network connect test charming_allen 
+➜  test docker network connect test ecstatic_chaum 
+➜  test docker exec -it charming_allen sh
+```
+or create new containers with the new network
+```bash
+➜  test docker container run --name dashbord -d -p 8080:80 --network=test dashbord:2
+8ecc2502bb6b9bb881ff24135273c899370e420d43f4fac83ee3fdc3a85864dc
+➜  test docker container run --name=user-api -d -p 3000:8080 --network=test user-api-manual
+e18e94c7910d24d43ec547c5474767833301e6489815273838a71efcdfca0ba1
+➜  test docker exec -it dashbord sh
+# curl http://user-api:8080/api/v1/users
+[{"id":1,"name":"John Doe"},{"id":2,"name":"Jane Smith"},{"id":3,"name":"Bob Johnson"}]# 
+#
 ```
 
-```bash
+try to execute curl command from the dashbord container
 
+```bash
+➜  test docker exec -it dashbord sh
+# curl http://user-api:8080/api/v1/users
+[{"id":1,"name":"John Doe"},{"id":2,"name":"Jane Smith"},{"id":3,"name":"Bob Johnson"}]# 
+#
 ```
+
 ## 54.What is Docker Compose
 ```bash
 
