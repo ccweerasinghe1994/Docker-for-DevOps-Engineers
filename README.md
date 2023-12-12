@@ -1027,13 +1027,19 @@ when you run latest in production you are not in control of the changes that are
 always use specific version of your application.
 
 ## 41.Image Variants
-```bash
 
-```
+let's take node docker image as an example
+- slim means it has less features
+- alpine means it has less features and it's smaller in size
+- buster means it is based on debian buster
+- stretch means it is based on debian stretch
+- jessie means it is based on debian jessie
+- windowsservercore means it is based on windows server core
+- nanoserver means it is based on windows nano server
+- lts means it is based on long term support version of node
+- current means it is based on current version of node
 
-```bash
 
-```
 ## 42.Docker Registries
 ```bash
 
