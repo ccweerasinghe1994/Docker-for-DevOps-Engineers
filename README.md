@@ -1108,12 +1108,109 @@ latest: digest: sha256:099bec397e602e9dbc749666b7079df3596b8ae74712bd5307ee7a358
 
 ## 45.Docker Inpect
 ```bash
-
+➜  test docker inspect dashbord   
+[
+    {
+        "Id": "sha256:34407820e5fa0d40034e7470ba20be1ef88476e236b5849e60c8bd0bc80d2205",
+        "RepoTags": [
+            "dashbord:2",
+            "dashbord:latest"
+        ],
+        "RepoDigests": [
+            "dashbord@sha256:34407820e5fa0d40034e7470ba20be1ef88476e236b5849e60c8bd0bc80d2205",
+            "dashbord@sha256:34407820e5fa0d40034e7470ba20be1ef88476e236b5849e60c8bd0bc80d2205"
+        ],
+        "Parent": "",
+        "Comment": "buildkit.dockerfile.v0",
+        "Created": "2023-12-12T05:57:27.960787737Z",
+        "Container": "",
+        "ContainerConfig": {
+            "Hostname": "",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": null,
+            "Cmd": null,
+            "Image": "",
+            "Volumes": null,
+            "WorkingDir": "",
+            "Entrypoint": null,
+            "OnBuild": null,
+            "Labels": null
+        },
+        "DockerVersion": "master",
+        "Author": "",
+        "Config": {
+            "Hostname": "",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "ExposedPorts": {
+                "80/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "NGINX_VERSION=1.25.3",
+                "NJS_VERSION=0.8.2",
+                "PKG_RELEASE=1~bookworm"
+            ],
+            "Cmd": [
+                "nginx",
+                "-g",
+                "daemon off;"
+            ],
+            "Image": "",
+            "Volumes": null,
+            "WorkingDir": "",
+            "Entrypoint": [
+                "/docker-entrypoint.sh"
+            ],
+            "OnBuild": null,
+            "Labels": {
+                "maintainer": "NGINX Docker Maintainers <docker-maint@nginx.com>"
+            },
+            "StopSignal": "SIGQUIT"
+        },
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 76282518,
+        "VirtualSize": 76282518,
+        "GraphDriver": {
+            "Data": null,
+            "Name": "stargz"
+        },
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:92770f546e065c4942829b1f0d7d1f02c2eb1e6acf0d1bc08ef0bf6be4972839",
+                "sha256:8ae474e0cc8f5a81405b04143604f78bfac4756c523e276a36921a8c4da36567",
+                "sha256:f5525891d9e9b43a95b4aa1f79405087922489eb300864a2683262aae0fa5b3a",
+                "sha256:66283570f41bca3619443d121a79e810b8a72849b5329319993e538d563b3e2f",
+                "sha256:c2d3ab485d1b375fdd309458d69d93f8eb9aba8472e928efa32d9e5eda631440",
+                "sha256:cddc309885a283a35ef142af78bc6f2e9c9db10e1981c4ea9cfb2c00b83e68ff",
+                "sha256:0d0e9c83b6f775d68c7517aabf39ec9123ffca29672e3c3f83c5af7fc6aa242b",
+                "sha256:23791485d1aec0abd12d013f7b1ed62b8fe7a4eaf69c697e413419db67195b6b"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "2023-12-12T05:57:29.67756694Z"
+        }
+    }
+]
 ```
 
-```bash
+for debugging purposes we can use docker inspect to see what is inside the image or container
 
-```
 ## 46.Logs
 ```bash
 
