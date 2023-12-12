@@ -1022,13 +1022,10 @@ docker: Error response from daemon: driver failed programming external connectiv
 
 
 ## 40.Never Run Latest In Production
-```bash
 
-```
+when you run latest in production you are not in control of the changes that are going to be made to your application.
+always use specific version of your application.
 
-```bash
-
-```
 ## 41.Image Variants
 ```bash
 
