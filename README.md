@@ -936,11 +936,10 @@ https://docs.docker.com/engine/reference/builder/
 ## 37.Pulling Images using a Specifc Tag
 ```bash
 
-```
-
-```bash
+➜ docker pull nginx:1.25.3
 
 ```
+
 ## 38.Creating tags
 ```bash
 
