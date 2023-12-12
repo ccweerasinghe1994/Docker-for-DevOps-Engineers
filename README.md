@@ -1055,12 +1055,26 @@ we have to kind of registries
 
 ## 43.Docker Login
 ```bash
+➜  ~ docker login --help
+Log in to a Docker registry or cloud backend.
+If no registry server is specified, the default is defined by the daemon.
 
+Usage:
+  docker login [OPTIONS] [SERVER] [flags]
+  docker login [command]
+
+Available Commands:
+  azure       Log in to azure
+
+Flags:
+  -h, --help              Help for login
+  -p, --password string   password
+      --password-stdin    Take the password from stdin
+  -u, --username string   username
+
+Use "docker login [command] --help" for more information about a command.
 ```
 
-```bash
-
-```
 ## 44.Docker push
 ```bash
 
