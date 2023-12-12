@@ -1479,13 +1479,44 @@ http://localhost:8081/
 ![Alt text](image-57.png)
 
 ## 52.Understanding Container Communication
-```bash
 
+![Alt text](image-58.png)
+
+![Alt text](image-59.png)
+
+```bash
+➜  test docker container run --rm -it --network mongo mongo:7.0.4 sh
+# mongosh
+Current Mongosh Log ID: 657860fc27e384596d73ded0
+Connecting to:          mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.1.0
+MongoNetworkError: connect ECONNREFUSED 127.0.0.1:27017
+# mongosh --host mongo -u username -p 123
+Current Mongosh Log ID: 657861306c70fb464599a69a
+Connecting to:          mongodb://<credentials>@mongo:27017/?directConnection=true&appName=mongosh+2.1.0
+Using MongoDB:          7.0.4
+Using Mongosh:          2.1.0
+
+For mongosh info see: https://docs.mongodb.com/mongodb-shell/
+
+
+To help improve our products, anonymous usage data is collected and sent to MongoDB periodically (https://www.mongodb.com/legal/privacy-policy).
+You can opt-out by running the disableTelemetry() command.
+
+------
+   The server generated these startup warnings when booting
+   2023-12-12T09:59:26.900+00:00: Using the XFS filesystem is strongly recommended with the WiredTiger storage engine. See http://dochub.mongodb.org/core/prodnotes-filesystem
+   2023-12-12T09:59:27.732+00:00: /sys/kernel/mm/transparent_hugepage/enabled is 'always'. We suggest setting it to 'never'
+   2023-12-12T09:59:27.732+00:00: vm.max_map_count is too low
+------
+
+test> show dbs
+admin   100.00 KiB
+config  108.00 KiB
+local    72.00 KiB
+test     48.00 KiB
+test>
 ```
 
-```bash
-
-```
 ## 53.Another example
 ```bash
 
