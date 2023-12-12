@@ -942,11 +942,24 @@ https://docs.docker.com/engine/reference/builder/
 
 ## 38.Creating tags
 ```bash
-
-```
-
-```bash
-
+➜  ~ docker image tag dashbord:latest dashbord:1
+➜  ~ docker images
+REPOSITORY               TAG         IMAGE ID       CREATED        SIZE
+user-api-manual          latest      d0c00cb8ef78   20 hours ago   1.59GB
+user-api-server          latest      7236b52ec136   21 hours ago   204MB
+dashbord                 1           cd810e3693f4   24 hours ago   302MB
+dashbord                 latest      cd810e3693f4   24 hours ago   302MB
+bash                     latest      9e21bb4e3753   27 hours ago   21.3MB
+nginx                    latest      10d1f5b58f74   2 days ago     272MB
+amigoscode/2048          latest      9d83e47f0b97   2 days ago     203MB
+docker/getting-started   latest      d79336f4812b   2 days ago     73.9MB
+maven                    latest      2bbd188fef23   2 days ago     769MB
+rust                     1.74.1      32d220ca8c77   2 days ago     2.05GB
+node                     current     db2672e3c200   2 days ago     1.58GB
+python                   latest      6d7fa2d5653e   2 days ago     1.47GB
+openjdk                  22-oracle   6b74a5003ca5   2 days ago     787MB
+mongo                    7.0.4       b679b96ec8a2   2 days ago     1.04GB
+postgres                 16.1        d74fa761bad4   2 days ago     603MB
 ```
 ## 39.Creating Version 2 of the Dashboard
 ```bash
