@@ -1287,11 +1287,82 @@ CONTAINER ID   IMAGE        COMMAND                  CREATED          STATUS    
 
 ## 47.Running commands in Containers
 ```bash
+➜  test docker container exec --help 
 
+Usage:  docker container exec [OPTIONS] CONTAINER COMMAND [ARG...]
+
+Execute a command in a running container
+
+Aliases:
+  docker container exec, docker exec
+
+Options:
+  -d, --detach               Detached mode: run command in the background
+      --detach-keys string   Override the key sequence for detaching a container
+  -e, --env list             Set environment variables
+      --env-file list        Read in a file of environment variables
+  -i, --interactive          Keep STDIN open even if not attached
+      --privileged           Give extended privileges to the command
+  -t, --tty                  Allocate a pseudo-TTY
+  -u, --user string          Username or UID (format: "<name|uid>[:<group|gid>]")
+  -w, --workdir string       Working directory inside the container
 ```
 
 ```bash
-
+➜  test docker container exec wizardly_carver env  
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+HOSTNAME=20e21714eda3
+NGINX_VERSION=1.25.3
+NJS_VERSION=0.8.2
+PKG_RELEASE=1~bookworm
+HOME=/root
+➜  test docker container exec wizardly_carver pwd
+/
+➜  test docker container exec wizardly_carver ls /
+bin
+boot
+dev
+docker-entrypoint.d
+docker-entrypoint.sh
+etc
+home
+lib
+lib32
+lib64
+libx32
+media
+mnt
+opt
+proc
+root
+run
+sbin
+srv
+sys
+tmp
+usr
+var
+➜  test docker container exec -it wizardly_carver sh
+# ls
+bin  boot  dev  docker-entrypoint.d  docker-entrypoint.sh  etc  home  lib  lib32  lib64  libx32  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+# top
+sh: 2: top: not found
+# df
+Filesystem      1K-blocks    Used Available Use% Mounted on
+overlay        1055762868 7554460 994504936   1% /
+tmpfs               65536       0     65536   0% /dev
+tmpfs             3911840       0   3911840   0% /sys/fs/cgroup
+shm                 65536       0     65536   0% /dev/shm
+/dev/sde       1055762868 7554460 994504936   1% /etc/hosts
+tmpfs             3911840       0   3911840   0% /proc/acpi
+tmpfs             3911840       0   3911840   0% /sys/firmware
+# ^C
+# ^C
+# exit
+➜  test docker container exec -it wizardly_carver bash
+root@20e21714eda3:/# ls
+bin  boot  dev  docker-entrypoint.d  docker-entrypoint.sh  etc  home  lib  lib32  lib64  libx32  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+root@20e21714eda3:/#
 ```
 ## 48.How to comunicate between containers
 ```bash
