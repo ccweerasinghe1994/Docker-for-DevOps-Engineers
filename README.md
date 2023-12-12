@@ -925,13 +925,10 @@ npm notice
 ![Alt text](image-47.png)
 
 ## 35.Exploring Dockerfiles
-```bash
 
-```
+node https://github.com/nodejs/docker-node/blob/6e6de6d890fce6946236cf403b0d5d5b33178e61/21/alpine3.18/Dockerfile
 
-```bash
 
-```
 ## 36.Dockerfile reference
 ```bash
 
