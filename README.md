@@ -962,13 +962,65 @@ mongo                    7.0.4       b679b96ec8a2   2 days ago     1.04GB
 postgres                 16.1        d74fa761bad4   2 days ago     603MB
 ```
 ## 39.Creating Version 2 of the Dashboard
-```bash
-
-```
 
 ```bash
-
+➜ docker image build -t dashbord:2 -t dashbord:latest .
+[+] Building 37.5s (8/8) FINISHED                                                                                                                docker:default
+ => [internal] load build definition from Dockerfile                                                                                                       0.1s
+ => => transferring dockerfile: 85B                                                                                                                        0.0s
+ => [internal] load metadata for docker.io/library/nginx:latest                                                                                           17.9s
+ => [auth] library/nginx:pull token for registry-1.docker.io                                                                                               0.0s
+ => [internal] load .dockerignore                                                                                                                          0.0s
+ => => transferring context: 2B                                                                                                                            0.0s
+ => [internal] load build context                                                                                                                         16.2s
+ => => transferring context: 158.91kB                                                                                                                     16.2s
+ => CACHED [1/2] FROM docker.io/library/nginx:latest@sha256:10d1f5b58f74683ad34eb29287e07dab1e90f10af243f151bb50aa5dbb4d62ee                               0.1s
+ => => resolve docker.io/library/nginx:latest@sha256:10d1f5b58f74683ad34eb29287e07dab1e90f10af243f151bb50aa5dbb4d62ee                                      0.0s
+ => [2/2] COPY . /usr/share/nginx/html                                                                                                                     1.2s
+ => exporting to image                                                                                                                                     1.8s
+ => => exporting layers                                                                                                                                    1.0s
+ => => exporting manifest sha256:bf2aee8f19be121cd0fcb2c66a9b3d511214891352d2da5672c5ba3bee0c6ffd                                                          0.0s
+ => => exporting config sha256:6a363986f025f5fc5285add777b87a89bcb5ca1a10772efbeb5ccb013bcd05ed                                                            0.0s
+ => => exporting attestation manifest sha256:3566ed6c772dc4a4bb183dae6acb25ce4839faab107e5045d0bbfa2b13fe01ad                                              0.0s
+ => => exporting manifest list sha256:34407820e5fa0d40034e7470ba20be1ef88476e236b5849e60c8bd0bc80d2205                                                     0.0s
+ => => naming to docker.io/library/dashbord:2                                                                                                              0.0s
+ => => unpacking to docker.io/library/dashbord:2                                                                                                           0.5s 
+ => => naming to docker.io/library/dashbord:latest                                                                                                         0.0s 
+ => => unpacking to docker.io/library/dashbord:latest                                                                                                      0.0s 
+➜ docker images
+REPOSITORY               TAG         IMAGE ID       CREATED         SIZE
+dashbord                 1           cd810e3693f4   9 minutes ago   302MB
+user-api-manual          latest      d0c00cb8ef78   21 hours ago    1.59GB
+user-api-server          latest      7236b52ec136   21 hours ago    204MB
+dashbord                 2           34407820e5fa   24 hours ago    302MB
+dashbord                 latest      34407820e5fa   24 hours ago    302MB
+bash                     latest      9e21bb4e3753   27 hours ago    21.3MB
+nginx                    latest      10d1f5b58f74   2 days ago      272MB
+amigoscode/2048          latest      9d83e47f0b97   2 days ago      203MB
+docker/getting-started   latest      d79336f4812b   2 days ago      73.9MB
+maven                    latest      2bbd188fef23   2 days ago      769MB
+rust                     1.74.1      32d220ca8c77   2 days ago      2.05GB
+node                     current     db2672e3c200   2 days ago      1.58GB
+python                   latest      6d7fa2d5653e   2 days ago      1.47GB
+openjdk                  22-oracle   6b74a5003ca5   2 days ago      787MB
+mongo                    7.0.4       b679b96ec8a2   2 days ago      1.04GB
+postgres                 16.1        d74fa761bad4   2 days ago      603MB
+➜ docker container run -d -p 8080:80 dashbord:1
+4587da514017b3e52d75b4ef91906f2c63c61eb8140de2d0483beb66937902f9
+➜ docker container run -d -p 8080:80 dashbord:2
+3bff7093bf0006b8724035b4ec76396df48956c9199bdb0546c378a1ceffe043
+docker: Error response from daemon: driver failed programming external connectivity on endpoint agitated_chatelet (b5476f60ceaaed7e924359c58dedc3d122d2e24ada06c31eb2f6cee569e4443c): Bind for 0.0.0.0:8080 failed: port is already allocated.
+➜ docker container run -d -p 8081:80 dashbord:2
+5b93dadd14cadd8d56292db8a51e3f7ba59c73a2361fd947bedab4453fd87995
+➜ docker container run -d -p 8082:80 dashbord:latest
+63bbf93eba68cc25d1a0cc64a99936a5266e22026461cf72b29e34d1bad6b037
 ```
+
+![Alt text](image-49.png)
+
+![Alt text](image-50.png)
+
+
 ## 40.Never Run Latest In Production
 ```bash
 
