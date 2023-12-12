@@ -1365,13 +1365,10 @@ bin  boot  dev  docker-entrypoint.d  docker-entrypoint.sh  etc  home  lib  lib32
 root@20e21714eda3:/#
 ```
 ## 48.How to comunicate between containers
-```bash
+![Alt text](image-54.png)
 
-```
+![Alt text](image-55.png)
 
-```bash
-
-```
 ## 49.Docker Network
 ```bash
 
