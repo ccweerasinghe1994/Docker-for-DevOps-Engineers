@@ -885,6 +885,9 @@ npm notice
 ```
 
 ## 33.Dockerfile and Building image for user-api
+
+![Alt text](image-48.png)
+
 ```bash
 ➜  user-api docker image build -f ./Dockerfile.test -t user-api-manual .
 [+] Building 6.1s (10/10) FINISHED                                                                                                                               docker:default
@@ -915,12 +918,12 @@ npm notice
 
 ## 34.Running Container for user-api image
 ```bash
-
+➜ docker container run -d -p 3000:8080 --name=user-api-manual user-api-manual  
+8a3dac240a06f3818782b8028254c03406110602a74903d2e8b253cdf7cd505d
 ```
 
-```bash
+![Alt text](image-47.png)
 
-```
 ## 35.Exploring Dockerfiles
 ```bash
 
