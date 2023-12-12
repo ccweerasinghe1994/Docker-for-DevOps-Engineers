@@ -1041,13 +1041,18 @@ let's take node docker image as an example
 
 
 ## 42.Docker Registries
-```bash
+![Alt text](image-51.png)
 
-```
+we have to kind of registries
 
-```bash
+- public/private registries
+  - e.g docker hub
+  - e.g github packages
+  - e.g amazon ecr
+  - e.g google cloud registry
+  - e.g azure container registry
 
-```
+
 ## 43.Docker Login
 ```bash
 
