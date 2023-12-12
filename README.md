@@ -1213,12 +1213,78 @@ for debugging purposes we can use docker inspect to see what is inside the image
 
 ## 46.Logs
 ```bash
-
+➜  test docker container run -d -p 8080:80 dashbord:2
+20e21714eda3e511a33aea7ba3dd55d9d277b427c1489d3ae23f2e25a3b83a53
+➜  test docker container ls
+CONTAINER ID   IMAGE        COMMAND                  CREATED          STATUS          PORTS                  NAMES
+20e21714eda3   dashbord:2   "/docker-entrypoint.…"   33 seconds ago   Up 32 seconds   0.0.0.0:8080->80/tcp   wizardly_carver
+➜  test docker container logs wizardly_carver 
+/docker-entrypoint.sh: /docker-entrypoint.d/ is not empty, will attempt to perform configuration
+/docker-entrypoint.sh: Looking for shell scripts in /docker-entrypoint.d/
+/docker-entrypoint.sh: Launching /docker-entrypoint.d/10-listen-on-ipv6-by-default.sh
+10-listen-on-ipv6-by-default.sh: info: Getting the checksum of /etc/nginx/conf.d/default.conf
+10-listen-on-ipv6-by-default.sh: info: Enabled listen on IPv6 in /etc/nginx/conf.d/default.conf
+/docker-entrypoint.sh: Sourcing /docker-entrypoint.d/15-local-resolvers.envsh
+/docker-entrypoint.sh: Launching /docker-entrypoint.d/20-envsubst-on-templates.sh
+/docker-entrypoint.sh: Launching /docker-entrypoint.d/30-tune-worker-processes.sh
+/docker-entrypoint.sh: Configuration complete; ready for start up
+2023/12/12 08:12:49 [notice] 1#1: using the "epoll" event method
+2023/12/12 08:12:49 [notice] 1#1: nginx/1.25.3
+2023/12/12 08:12:49 [notice] 1#1: built by gcc 12.2.0 (Debian 12.2.0-14) 
+2023/12/12 08:12:49 [notice] 1#1: OS: Linux 5.15.133.1-microsoft-standard-WSL2
+2023/12/12 08:12:49 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2023/12/12 08:12:49 [notice] 1#1: start worker processes
+2023/12/12 08:12:49 [notice] 1#1: start worker process 29
+2023/12/12 08:12:49 [notice] 1#1: start worker process 30
+2023/12/12 08:12:49 [notice] 1#1: start worker process 31
+2023/12/12 08:12:49 [notice] 1#1: start worker process 32
+2023/12/12 08:12:49 [notice] 1#1: start worker process 33
+2023/12/12 08:12:49 [notice] 1#1: start worker process 34
+2023/12/12 08:12:49 [notice] 1#1: start worker process 35
+2023/12/12 08:12:49 [notice] 1#1: start worker process 36
+2023/12/12 08:12:49 [notice] 1#1: start worker process 37
+2023/12/12 08:12:49 [notice] 1#1: start worker process 38
+2023/12/12 08:12:49 [notice] 1#1: start worker process 39
+2023/12/12 08:12:49 [notice] 1#1: start worker process 40
+2023/12/12 08:12:49 [notice] 1#1: start worker process 41
+2023/12/12 08:12:49 [notice] 1#1: start worker process 42
+2023/12/12 08:12:49 [notice] 1#1: start worker process 43
+2023/12/12 08:12:49 [notice] 1#1: start worker process 44
+➜  test docker container logs wizardly_carver -f
+/docker-entrypoint.sh: /docker-entrypoint.d/ is not empty, will attempt to perform configuration
+/docker-entrypoint.sh: Looking for shell scripts in /docker-entrypoint.d/
+/docker-entrypoint.sh: Launching /docker-entrypoint.d/10-listen-on-ipv6-by-default.sh
+10-listen-on-ipv6-by-default.sh: info: Getting the checksum of /etc/nginx/conf.d/default.conf
+10-listen-on-ipv6-by-default.sh: info: Enabled listen on IPv6 in /etc/nginx/conf.d/default.conf
+/docker-entrypoint.sh: Sourcing /docker-entrypoint.d/15-local-resolvers.envsh
+/docker-entrypoint.sh: Launching /docker-entrypoint.d/20-envsubst-on-templates.sh
+/docker-entrypoint.sh: Launching /docker-entrypoint.d/30-tune-worker-processes.sh
+/docker-entrypoint.sh: Configuration complete; ready for start up
+2023/12/12 08:12:49 [notice] 1#1: using the "epoll" event method
+2023/12/12 08:12:49 [notice] 1#1: nginx/1.25.3
+2023/12/12 08:12:49 [notice] 1#1: built by gcc 12.2.0 (Debian 12.2.0-14)
+2023/12/12 08:12:49 [notice] 1#1: OS: Linux 5.15.133.1-microsoft-standard-WSL2
+2023/12/12 08:12:49 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2023/12/12 08:12:49 [notice] 1#1: start worker processes
+2023/12/12 08:12:49 [notice] 1#1: start worker process 29
+2023/12/12 08:12:49 [notice] 1#1: start worker process 30
+2023/12/12 08:12:49 [notice] 1#1: start worker process 31
+2023/12/12 08:12:49 [notice] 1#1: start worker process 32
+2023/12/12 08:12:49 [notice] 1#1: start worker process 33
+2023/12/12 08:12:49 [notice] 1#1: start worker process 34
+2023/12/12 08:12:49 [notice] 1#1: start worker process 35
+2023/12/12 08:12:49 [notice] 1#1: start worker process 36
+2023/12/12 08:12:49 [notice] 1#1: start worker process 37
+2023/12/12 08:12:49 [notice] 1#1: start worker process 38
+2023/12/12 08:12:49 [notice] 1#1: start worker process 39
+2023/12/12 08:12:49 [notice] 1#1: start worker process 40
+2023/12/12 08:12:49 [notice] 1#1: start worker process 41
+2023/12/12 08:12:49 [notice] 1#1: start worker process 42
+2023/12/12 08:12:49 [notice] 1#1: start worker process 43
+2023/12/12 08:12:49 [notice] 1#1: start worker process 44
+172.17.0.1 - - [12/Dec/2023:08:14:07 +0000] "GET / HTTP/1.1" 200 31451 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0" "-"
 ```
 
-```bash
-
-```
 ## 47.Running commands in Containers
 ```bash
 
