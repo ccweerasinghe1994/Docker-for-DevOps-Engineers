@@ -1464,12 +1464,20 @@ forked process: 28
 ```
 ## 51.MongoExpress
 ```bash
-
+docker container run --name mongo-server --network mongo -d -p 8081:8081 \
+-e ME_CONFIG_MONGODB_AUTH_USERNAME=username \
+-e ME_CONFIG_MONGODB_AUTH_PASSWORD=123 \
+-e ME_CONFIG_MONGODB_SERVER=mongo \
+-e ME_CONFIG_BASICAUTH_USERNAME=admin \
+-e ME_CONFIG_BASICAUTH_PASSWORD=123 \
+mongo-express:1.0.0-18
 ```
+http://localhost:8081/
 
-```bash
+![Alt text](image-56.png)
 
-```
+![Alt text](image-57.png)
+
 ## 52.Understanding Container Communication
 ```bash
 
