@@ -1077,12 +1077,35 @@ Use "docker login [command] --help" for more information about a command.
 
 ## 44.Docker push
 ```bash
-
+➜  test docker image build -t wchamara/test .
+[+] Building 14.1s (6/6) FINISHED                                                                                                                docker:default
+ => [internal] load build definition from Dockerfile                                                                                                       0.1s
+ => => transferring dockerfile: 54B                                                                                                                        0.0s 
+ => [internal] load metadata for docker.io/library/alpine:3                                                                                               13.4s 
+ => [auth] library/alpine:pull token for registry-1.docker.io                                                                                              0.0s
+ => [internal] load .dockerignore                                                                                                                          0.1s
+ => => transferring context: 2B                                                                                                                            0.0s 
+ => [1/1] FROM docker.io/library/alpine:3@sha256:51b67269f354137895d43f3b3d810bfacd3945438e94dc5ac55fdac340352f48                                          0.1s
+ => => resolve docker.io/library/alpine:3@sha256:51b67269f354137895d43f3b3d810bfacd3945438e94dc5ac55fdac340352f48                                          0.1s 
+ => exporting to image                                                                                                                                     0.2s
+ => => exporting layers                                                                                                                                    0.0s 
+ => => exporting manifest sha256:87580ecea06956c13c0c831e1b3744c48e16eee48a32537829713968d9e7bf22                                                          0.0s 
+ => => exporting config sha256:26fc80ffe8cc273858f455668aed8676cd9593966be3dee4d53f0647e054e923                                                            0.0s 
+ => => exporting attestation manifest sha256:bd0d0d1946a32cf890de38730b96e9301eeac7d0c7b9ce706b8eeaf7097658c4                                              0.0s
+ => => exporting manifest list sha256:099bec397e602e9dbc749666b7079df3596b8ae74712bd5307ee7a3587ab2ca9                                                     0.0s 
+ => => naming to docker.io/wchamara/test:latest                                                                                                            0.0s 
+ => => unpacking to docker.io/wchamara/test:latest                                                                                                         0.0s
+➜  test docker push wchamara/test:latest 
+The push refers to repository [docker.io/wchamara/test]
+661ff4d9561e: Mounted from library/bash
+479dc01cbc9e: Pushed
+latest: digest: sha256:099bec397e602e9dbc749666b7079df3596b8ae74712bd5307ee7a3587ab2ca9 size: 855
 ```
 
-```bash
+![Alt text](image-53.png)
 
-```
+![Alt text](image-52.png)
+
 ## 45.Docker Inpect
 ```bash
 
