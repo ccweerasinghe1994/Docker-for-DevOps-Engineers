@@ -1690,12 +1690,22 @@ networks:
 ```
 ## 58.Docker Compose Up
 ```bash
-
+➜ ls
+docker-compose.yml
+➜ docker compose up
+[+] Building 0.0s (0/0)                                                                                                                                     docker:default
+[+] Running 3/3
+ ✔ Network mongo            Created                                                                                                                                   0.1s 
+ ✔ Container mongo          Created                                                                                                                                   0.2s 
+ ✔ Container mongo-express  Created                                                                                                                                   0.2s 
+Attaching to mongo, mongo-express
+mongo          | about to fork child process, waiting until server is ready for connections.
+mongo          | forked process: 28
 ```
 
-```bash
+![Alt text](image-62.png)
 
-```
+
 ## 59.Exploring docker compose commands
 ```bash
 
