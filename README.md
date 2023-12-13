@@ -1708,11 +1708,45 @@ mongo          | forked process: 28
 
 ## 59.Exploring docker compose commands
 ```bash
-
+➜  compose docker compose ps
+NAME            IMAGE                    COMMAND                  SERVICE         CREATED          STATUS          PORTS
+mongo           mongo:7.0.4              "docker-entrypoint.s…"   mongo           15 minutes ago   Up 15 minutes   0.0.0.0:27017->27017/tcp
+mongo-express   mongo-express:1.0.0-18   "/sbin/tini -- /dock…"   mongo-express   15 minutes ago   Up 15 minutes   0.0.0.0:8081->8081/tcp
+➜  compose docker compose stop
+[+] Stopping 2/2
+ ✔ Container mongo-express  Stopped                                                                                                                0.4s 
+ ✔ Container mongo          Stopped                                                                                                                0.5s 
+➜  compose docker compose start
+[+] Running 2/2
+ ✔ Container mongo          Started                                                                                                                0.4s 
+ ✔ Container mongo-express  Started                                                                                                                0.3s 
+➜  compose docker compose down 
+[+] Running 3/3
+ ✔ Container mongo-express  Removed                                                                                                                0.4s 
+ ✔ Container mongo          Removed                                                                                                                0.7s 
+ ✔ Network mongo            Removed                                                                                                                0.4s 
+➜  compose docker compose ls  
+NAME                                                STATUS              CONFIG FILES
+docker_volumes-backup-extension-desktop-extension   running(1)          C:\Users\ccwee\AppData\Roaming\Docker\extensions\docker_volumes-backup-extension\vm\docker-compose.yaml
+➜  compose docker compose ps
+NAME      IMAGE     COMMAND   SERVICE   CREATED   STATUS    PORTS
+➜  compose docker compose up -d
+[+] Building 0.0s (0/0)                                                                                                                  docker:default
+[+] Running 3/3
+ ✔ Network mongo            Created                                                                                                                0.1s 
+ ✔ Container mongo          Started                                                                                                                0.2s 
+ ✔ Container mongo-express  Started
 ```
 
 ```bash
-
+➜  compose docker compose logs mongo-express -f
+mongo-express  | No custom config.js found, loading config.default.js
+mongo-express  | Welcome to mongo-express
+mongo-express  | ------------------------
+mongo-express  | 
+mongo-express  | 
+mongo-express  | Mongo Express server listening at http://0.0.0.0:8081
+mongo-express  | Server is open to allow connections from anyone (0.0.0.0) 
 ```
 ## 60.Docker Volume
 ```bash
