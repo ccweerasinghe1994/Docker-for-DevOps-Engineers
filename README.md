@@ -1655,10 +1655,37 @@ services:
 
 ## 57.Docker Network
 ```bash
+services:
+  mongo:
+    image: mongo:7.0.4
+    container_name: mongo
+    ports:
+      - 27017:27017
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=username
+      - MONGO_INITDB_ROOT_PASSWORD=123
+    networks:
+      - mongo
+  mongo-express:
+    image: mongo-express:1.0.0-18
+    container_name: mongo-express
+    ports:
+      - 8081:8081
+    environment:
+      - ME_CONFIG_MONGODB_AUTH_USERNAME=username
+      - ME_CONFIG_MONGODB_AUTH_PASSWORD=123
+      - ME_CONFIG_MONGODB_SERVER=mongo
+      - ME_CONFIG_BASICAUTH_USERNAME=admin
+      - ME_CONFIG_BASICAUTH_PASSWORD=123
+    depends_on:
+      - mongo
+    restart: always
+    networks:
+      - mongo
 
-```
-
-```bash
+networks:
+  mongo:
+    name: mongo
 
 ```
 ## 58.Docker Compose Up
