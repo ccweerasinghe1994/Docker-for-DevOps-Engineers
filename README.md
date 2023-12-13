@@ -1561,13 +1561,11 @@ try to execute curl command from the dashbord container
 ```
 
 ## 54.What is Docker Compose
-```bash
 
-```
+![Alt text](image-60.png)
 
-```bash
+![Alt text](image-61.png)
 
-```
 ## 55.Docker Compose cmd
 ```bash
 
