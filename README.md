@@ -1750,11 +1750,53 @@ mongo-express  | Server is open to allow connections from anyone (0.0.0.0)
 ```
 ## 60.Docker Volume
 ```bash
+services:
+  mongo:
+    image: mongo:7.0.4
+    container_name: mongo
+    ports:
+      - 27017:27017
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=username
+      - MONGO_INITDB_ROOT_PASSWORD=123
+    networks:
+      - mongo
+    volumes:
+      - data:/data/db
+  mongo-express:
+    image: mongo-express:1.0.0-18
+    container_name: mongo-express
+    ports:
+      - 8081:8081
+    environment:
+      - ME_CONFIG_MONGODB_AUTH_USERNAME=username
+      - ME_CONFIG_MONGODB_AUTH_PASSWORD=123
+      - ME_CONFIG_MONGODB_SERVER=mongo
+      - ME_CONFIG_BASICAUTH_USERNAME=admin
+      - ME_CONFIG_BASICAUTH_PASSWORD=123
+    depends_on:
+      - mongo
+    restart: always
+    networks:
+      - mongo
+
+volumes:
+  data: {}
+
+networks:
+  mongo:
+    name: mongo
 
 ```
 
 ```bash
-
+➜ docker compose up -d
+[+] Building 0.0s (0/0)                                                                                                                  docker:default
+[+] Running 4/4
+ ✔ Network mongo            Created                                                                                                                0.1s 
+ ✔ Volume "compose_data"    Created                                                                                                                0.0s 
+ ✔ Container mongo          Started                                                                                                                0.2s 
+ ✔ Container mongo-express  Started 
 ```
 ## 61.Docker Compose Documentation
 ```bash
